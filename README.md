@@ -2,13 +2,13 @@
 
 # Rill World
 
-**rill** /rɪl/ *noun* — a small stream or a tiny, shallow channel cut into soil by running water.
+**rill** /rɪl/ *noun*: a small stream or a tiny, shallow channel cut into soil by running water.
 
 A generative environment instrument for the **M5Stack StickS3**. Field recordings of rain, birds, insects, ocean and cave ambiences move through slow filters and effects, accompanied by particle visuals. Tap for a new sample. Shake for a new environment.
 
 [Play Rill World](https://rillsound.com/world) · [Get on M5Burner](https://burner.m5stack.com/firmware/2102132303056334850) · [Build and install](#build-and-install)
 
-**Rill family:** [Synth](https://github.com/bruceblay/rill-synth) · [Mallet](https://github.com/bruceblay/rill-mallet) · [World](https://github.com/bruceblay/rill-world) · [Drums](https://github.com/bruceblay/rill-drums) · [Rill Sound](https://rillsound.com)
+**Rill family:** [Voice](https://github.com/bruceblay/rill-voice) · [Synth](https://github.com/bruceblay/rill-synth) · [Mallet](https://github.com/bruceblay/rill-mallet) · [World](https://github.com/bruceblay/rill-world) · [Drums](https://github.com/bruceblay/rill-drums) · [Rill Sound](https://rillsound.com)
 
 ## Visuals
 
@@ -40,9 +40,9 @@ The data view shows the current bank, recording, generation, tempo, bar count, v
 
 Five banks of field recordings: **Rain, Birds, Insects, Ocean and Cave**. Each bank moves through a shuffled pool of samples, avoiding an immediate repeat. Rain ranges from a steady wash to percussive surfaces; Birds and Insects gather outdoor ambiences; Ocean combines waves and underwater sound; Cave uses composed drip-and-reverb recordings. See [sources and licenses](docs/SOURCES.md).
 
-A slow, bar-synced lowpass sweep gives the loops movement. Five self-clearing effects—Pitch Wobble, Delay Throw, Crush, Reverb and Smear—briefly reshape the sound, with gentler settings for Rain and Ocean. Cave plays at 65% speed, extending its three-second recordings to about 4.6 seconds.
+A slow, bar-synced lowpass sweep gives the loops movement. Five self-clearing effects (Pitch Wobble, Delay Throw, Crush, Reverb and Smear) briefly reshape the sound, with gentler settings for Rain and Ocean. Cave plays at 65% speed, extending its three-second recordings to about 4.6 seconds.
 
-Playback state is not saved across restarts. Near a Rill Synth, Mallet or Drums running its ensemble radio, World follows their shared tempo and bar line over ESP-NOW, leaving the clock to them, so its sweep breathes with them, and a new texture comes in on the next bar line. The same Ensemble is in [Rill Sound](https://rillsound.com/ensemble).
+Playback state is not saved across restarts. Near a Rill Voice, Synth, Mallet or Drums running its ensemble radio, World follows their shared tempo and bar line over ESP-NOW, leaving the clock to them, so its sweep breathes with them, and a new texture comes in on the next bar line. The same Ensemble is in [Rill Sound](https://rillsound.com/ensemble).
 
 ## Hardware
 
