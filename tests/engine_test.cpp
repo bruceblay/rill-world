@@ -129,7 +129,7 @@ int main() {
   }
   std::cout << "Every bank's punch style stays within headroom and the jump bound\n";
 
-  // Shake (newBank()) is the only thing that crosses a bank boundary; tap
+  // Tap (newBank()) is the only thing that crosses a bank boundary; shake
   // (newVariation()) must never leave the current bank on its own. Bank
   // texture ranges below mirror Field.h's Texture enum order.
   {
@@ -159,7 +159,7 @@ int main() {
     }
     assert(banksSeen == (1u << field::bankCount) - 1); // every bank visited
     assert(textureBits == (1u << field::textureCount) - 1); // every texture reachable
-    std::cout << "Shake crosses banks, tap stays within one; all " << field::bankCount
+    std::cout << "Tap crosses banks, shake stays within one; all " << field::bankCount
               << " banks and " << field::textureCount << " textures reachable\n";
   }
 }

@@ -60,8 +60,8 @@ constexpr unsigned steps = 16;
 // so their gain runs well above the other banks'. The engine and its
 // effects are generic over "whatever clips are in the current bank," so
 // each bank is just more Texture entries, more Character rows and a
-// BankRange -- tap still only picks within the current bank, shake
-// (newBank()) is the only thing that crosses a bank boundary.
+// BankRange -- shake (newVariation()) only picks within the current bank,
+// tap (newBank()) is the only thing that crosses a bank boundary.
 enum Texture : unsigned { Rain = 0, RainPuddle, RainConcrete, RainTerrace, RainTarpaulin,
                            BirdForest, BirdWake, BirdEvening,
                            InsectNight, InsectCrickets, InsectFieldCricket, InsectGrasshopper,
@@ -352,7 +352,7 @@ class Engine {
     if (generation == 1) applyCharacter(); else requestXfade();
   }
   void newVariation() { generate(); }
-  // Shake visits every bank before starting another shuffled round.
+  // Tap visits every bank before starting another shuffled round.
   void newBank() {
     if (bankCount <= 1) return;
     bank = pickFromBag(banksRemaining, bankCount, bank);

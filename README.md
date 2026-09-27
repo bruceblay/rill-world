@@ -4,7 +4,7 @@
 
 **rill** /rɪl/ *noun*: a small stream or a tiny, shallow channel cut into soil by running water.
 
-A generative environment instrument for the **M5Stack StickS3**. Field recordings of rain, birds, insects, ocean and cave ambiences move through slow filters and effects, accompanied by particle visuals. Tap for a new sample. Shake for a new environment.
+A generative environment instrument for the **M5Stack StickS3**. Field recordings of rain, birds, insects, ocean and cave ambiences move through slow filters and effects, accompanied by particle visuals. Tap for a new environment. Shake for a new sample.
 
 [Play Rill World](https://rillsound.com/world) · [Get on M5Burner](https://burner.m5stack.com/firmware/2102132303056334850) · [Build and install](#build-and-install)
 
@@ -12,7 +12,7 @@ A generative environment instrument for the **M5Stack StickS3**. Field recording
 
 ## Visuals
 
-Five environments, each with its own particle movement and ground colour. Tap changes the ink; shake changes the environment.
+Five environments, each with its own particle movement and ground colour. Tap changes the environment; shake changes the ink.
 
 | Birds | Rain |
 | --- | --- |
@@ -28,11 +28,11 @@ Actual 240 × 135 renderer captures. Birds flap across a blue sky; rain forms ex
 
 | Gesture | Action |
 | --- | --- |
-| Front button: tap | Pick a new sample and character within the current bank, change the visual, and play |
+| Front button: tap | Cross into a different bank (a different environment, visual palette and drift) and play |
 | Front button: hold for about 0.65 seconds | Fade sound out or in; the loop continues while quiet |
 | Side button: tap | Cycle volume (it starts at the quietest step) and show the data view for four seconds |
 | Side button: hold | Slow the whole ensemble by 4 BPM, starting on the bar after next; below 52 it comes round to 100 |
-| Shake | Cross into a different bank -- a different environment, a different visual palette and drift |
+| Shake | Pick a new sample and character within the current bank, and change the visual |
 
 The data view shows the current bank, recording, generation, tempo, bar count, volume and battery estimate.
 
@@ -96,7 +96,7 @@ The audio arguments are output path, seconds, and optional seed. The visual argu
 
 `tools/embed_samples.py` converts mono 16-bit 32 kHz WAV loops into `src/Samples.h`; see that file's docstring and [docs/SOURCES.md](docs/SOURCES.md) before replacing or adding a clip.
 
-Tests cover five simulated minutes of playback per seed, bounded output, a jump/discontinuity bound across crossfades and the loop point, seed reproducibility, per-bank texture coverage, that tap never crosses a bank boundary and shake always can, fade/resume, and shake gesture recognition. They do not replace listening or checking the physical screen.
+Tests cover five simulated minutes of playback per seed, bounded output, a jump/discontinuity bound across crossfades and the loop point, seed reproducibility, per-bank texture coverage, that shake never crosses a bank boundary and tap always can, fade/resume, and shake gesture recognition. They do not replace listening or checking the physical screen.
 
 ## Project layout
 

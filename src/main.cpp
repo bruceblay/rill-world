@@ -63,7 +63,7 @@ void motionTask(void*) {
   for (;;) {
     if (M5.Imu.isEnabled() && (M5.Imu.update() & m5::IMU_Class::sensor_mask_accel)) {
       const auto data = M5.Imu.getImuData();
-      if (shake.update(data.accel.x,data.accel.y,data.accel.z,millis())) { repaintRequested = true; bankChangeRequested = true; }
+      if (shake.update(data.accel.x,data.accel.y,data.accel.z,millis())) changeRequested = true;
     }
     vTaskDelay(pdMS_TO_TICKS(20));
   }
@@ -176,7 +176,8 @@ void loop() {
   serviceEnsemble();
   uint32_t now = millis();
   bool changed = false;
-  if (M5.BtnA.wasClicked()) { changeRequested = true; playing = true; changed = true; }
+  // Tap moves to another environment; shake picks another recording within it.
+  if (M5.BtnA.wasClicked()) { bankChangeRequested = true; repaintRequested = true; playing = true; changed = true; }
   if (M5.BtnA.wasHold()) { playing = !playing; changed = true; }
   static uint32_t lastScene = 0;
   uint32_t currentScene = sceneInfo.load();
