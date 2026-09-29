@@ -52,6 +52,8 @@ The PlatformIO board name is `esp32-s3-devkitc-1`; the project supplies the Stic
 
 ## Build and install
 
+**Firmware 0.2.0** was submitted to M5Burner on September 29, 2026 and is awaiting review. The currently public store version is 0.1.0.
+
 Install Python 3.11 or later, then run these commands from the repository root:
 
 ```sh
