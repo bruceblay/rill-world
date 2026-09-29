@@ -48,7 +48,7 @@ Playback state is not saved across restarts. Near a Rill Voice, Synth, Mallet or
 
 Supported and tested: **M5Stack StickS3**, with ESP32-S3, 8 MB flash, display, IMU and built-in speaker. Other ESP32 boards and earlier M5Stick models are not supported by this configuration.
 
-The PlatformIO board name is `esp32-s3-devkitc-1`; the project supplies the StickS3 memory settings and uses M5Unified for board peripherals. Flash is partitioned as a single factory app slot (`partitions_field.csv`), not the usual two-slot OTA layout, so the embedded clips fit -- this device is flashed by USB each time, not updated over the air. The partition has been grown twice now (~7 MB, then ~7.6 MB, now ~7.87 MB) to fit Insects' and then Cave's clips, -- the practical ceiling on an 8 MB chip. The ensemble radio's WiFi stack (~390 KB) then displaced the rain-on-wheelbarrow clip, leaving the app ~98.5% full (~120 KB free). Anything more will need to trim or drop an existing clip rather than grow further.
+The PlatformIO board name is `esp32-s3-devkitc-1`; the project supplies the StickS3 memory settings and uses M5Unified for board peripherals. Flash is partitioned as a single factory app slot (`partitions_field.csv`) so the embedded recordings fit. Updates use USB. The app occupies about 98.5% of its partition, leaving about 120 KB free.
 
 ## Build and install
 

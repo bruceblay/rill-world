@@ -1,5 +1,13 @@
 # Changes
 
+## 0.2.0 (2026-09-29)
+
+- Tap now moves to a different environment, and shake picks a new recording within the current one.
+- Plays with other Rill devices nearby over ESP-NOW, with no setup, following the ensemble's tempo and bar line. World leaves keeping the clock to the others.
+- A new texture comes in on the next shared bar line.
+- Starts at the quietest volume, as the environmental layer under an ensemble.
+- Dropped the rain-on-wheelbarrow clip to make room for the ensemble radio.
+
 ## Initial repository — Study 1
 
 First scaffold: three filtered-noise textures (Water, Rain, Wind), a bar-synced swell standing in for a vintage sound conditioner's Surf Rate/Range knobs, and a step-scheduled transient layer for Rain's droplets and Wind's rustles. One ambient particle visual, drift direction and palette following the active texture. Host tests cover audio stability, a jump/discontinuity bound across texture crossfades, seed reproducibility, texture coverage, fade/resume, and shake detection.
